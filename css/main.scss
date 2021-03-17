@@ -1,0 +1,229 @@
+---
+# MOB 2020 Main Stylesheet
+# last modified August 18, 2020
+---
+
+@font-face {
+    font-family: 'dearest';
+    src: url('/webfonts/dearest.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mono';
+    src: url('/webfonts/ia-writer-duo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sprat';
+    src: url('/webfonts/sprat-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// ————————————————————————————————————————— 
+// VARIABLES: for partials
+// ————————————————————————————————————————— 
+// for layout
+$column-count: 12; 
+$column-count-m: 7;
+$column-count-s: 4;
+$grid-width: 1920; 
+$column-margin: 20;
+
+// ————————————————————————————————————————— 
+// IMPORTS 
+// ————————————————————————————————————————— 
+// these are partials
+// init for mob theme
+@import "init";
+// grid and base layout classes
+@import "layout";
+
+
+// ————————————————————————————————————————— 
+// VARIABLES: for base
+// ————————————————————————————————————————— 
+$headerheight: 80px;
+$fullbrowserheight: calc(100vh - 80px);
+
+// color
+$offWhite: #EBE9E5;
+$red: #FA003C;
+
+// easings
+$easing: cubic-bezier(0.83, 0, 0.17, 1);
+
+
+// ————————————————————————————————————————— 
+// M I X I N S
+// ————————————————————————————————————————— 
+// @include background-image("image.jpg");
+@mixin background-image($url) {
+    background: $grey url($url) no-repeat center;
+    background-size: cover;
+}
+
+// @include background-fill();
+@mixin background-fill() {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+// ————————————————————————————————————————— 
+// core styles & classes
+// ————————————————————————————————————————— 
+body {
+    background-color: black !important;
+    * {
+        color: $offWhite !important;
+    }
+    h1,h2,h3,h4,h5,h6,p,li,a {
+        font-family: 'sprat', serif;
+        font-size: 220%;
+        letter-spacing: -1px;
+        line-height: 1.57;
+    }
+}
+
+main {
+    margin-top: 150px !important;
+}
+
+body,
+input,
+textarea,
+radio,
+checkbox,
+.strip {
+    background-color: transparent;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    text-align: left;
+}
+
+.pv {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    embed,
+    video,
+    object {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+li p,
+p .button {
+    font-size: 100%;
+}
+
+
+
+// ————————————————————————————————————————— 
+// header
+// —————————————————————————————————————————
+
+.main-header {
+    .main-header__logo-area {
+        a {
+            text-decoration: none;
+            font-family: 'dearest', serif;
+            font-size: 400%;
+            line-height: 1;
+        }
+    }
+    .main-header__nav__icon img {
+        height: 40px;
+        padding: 10px;
+    }
+}
+
+.work-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .work-nav__link {
+        margin: 10px 0;
+    }
+}
+
+// ————————————————————————————————————————— 
+// Special Typography
+// —————————————————————————————————————————
+.home-hero {
+    h1 {
+        font-size: 600%;
+        line-height: 1.2;
+    }
+}
+
+.standard-text {
+    margin: 100px 0;
+}
+
+.work-cta {
+    a {
+        text-decoration: none;
+    }
+    h2 {
+        font-size: 100%;
+        max-width: 300px;
+    }
+}
+
+.four-oh-four {
+    h1 {
+        font-family: 'dearest', serif;
+        font-size: 10vw;
+    }
+}
+
+// ————————————————————————————————————————— 
+// buttons
+// —————————————————————————————————————————
+
+.work-nav__link,
+.button {
+    font-family: 'mono', monospace;
+    font-size: 140%;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $red !important;
+    text-decoration: none;
+    &:hover {}
+}
+
+
+
+// ————————————————————————————————————————— 
+// footer
+// —————————————————————————————————————————
+
+#footer {}
+
+
+// —————————————————————————————————————————
+// IMPORTS
+// —————————————————————————————————————————
+// these are partials, must go in the _sass folder
+@import "responsive.scss";
