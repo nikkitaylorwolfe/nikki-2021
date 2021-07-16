@@ -1,7 +1,5 @@
----
-# MOB 2020 Main Stylesheet
-# last modified August 18, 2020
----
+--- 
+--- 
 
 @font-face {
     font-family: 'dearest';
@@ -12,7 +10,7 @@
 
 @font-face {
     font-family: 'mono';
-    src: url('/webfonts/ia-writer-duo.woff') format('woff');
+    src: url('/webfonts/ia-writer-mono.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -28,10 +26,10 @@
 // VARIABLES: for partials
 // ————————————————————————————————————————— 
 // for layout
-$column-count: 12; 
+$column-count: 12;
 $column-count-m: 7;
 $column-count-s: 4;
-$grid-width: 1920; 
+$grid-width: 1920;
 $column-margin: 20;
 
 // ————————————————————————————————————————— 
@@ -51,11 +49,12 @@ $headerheight: 80px;
 $fullbrowserheight: calc(100vh - 80px);
 
 // color
-$offWhite: #EBE9E5;
-$red: #FA003C;
+$offWhite: #fff5f5;
+$red: #E60F0F;
 
 // easings
-$easing: cubic-bezier(0.83, 0, 0.17, 1);
+$easing: cubic-bezier(0.5, 1, 0.89, 1);
+$easeBack: cubic-bezier(0.34, 1.56, 0.64, 1);
 
 
 // ————————————————————————————————————————— 
@@ -63,7 +62,7 @@ $easing: cubic-bezier(0.83, 0, 0.17, 1);
 // ————————————————————————————————————————— 
 // @include background-image("image.jpg");
 @mixin background-image($url) {
-    background: $grey url($url) no-repeat center;
+    background: url($url) no-repeat center;
     background-size: cover;
 }
 
@@ -80,11 +79,23 @@ $easing: cubic-bezier(0.83, 0, 0.17, 1);
 // core styles & classes
 // ————————————————————————————————————————— 
 body {
-    background-color: black !important;
+    background-color: #130101 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
     * {
         color: $offWhite !important;
     }
-    h1,h2,h3,h4,h5,h6,p,li,a {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    a {
         font-family: 'sprat', serif;
         font-size: 220%;
         letter-spacing: -1px;
@@ -120,6 +131,7 @@ checkbox,
     /* 16:9 */
     padding-top: 25px;
     height: 0;
+
     embed,
     video,
     object {
@@ -136,6 +148,10 @@ p .button {
     font-size: 100%;
 }
 
+.wo {
+    overflow: visible;
+}
+
 
 
 // ————————————————————————————————————————— 
@@ -147,13 +163,20 @@ p .button {
         a {
             text-decoration: none;
             font-family: 'dearest', serif;
-            font-size: 400%;
+            font-size: 500%;
             line-height: 1;
+            letter-spacing: 0;
+            transition: all 0.8s cubic-bezier(0.37, 0, 0.63, 1);
+
+            &:hover {
+                text-shadow: 10px 10px 0px $red;
+            }
         }
     }
+
     .main-header__nav__icon img {
-        height: 40px;
-        padding: 10px;
+        height: 44px;
+        padding: 10px 20px 10px 0;
     }
 }
 
@@ -161,8 +184,14 @@ p .button {
     display: flex;
     flex-direction: column;
     align-items: start;
+    margin-top: -18px;
+
     .work-nav__link {
-        margin: 10px 0;
+        margin: 5px 0;
+
+        &.active {
+            border-bottom: 1px solid $red;
+        }
     }
 }
 
@@ -177,17 +206,86 @@ p .button {
 }
 
 .standard-text {
-    margin: 100px 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    p {
+        font-family: 'mono', monospace;
+        letter-spacing: 0;
+    }
 }
 
 .work-cta {
+    position: relative;
+    overflow: visible;
+    padding-bottom: 130px;
+
+    &:before {
+        opacity: .5;
+        content: '//';
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        font-family: 'mono', monospace;
+        font-size: 150%;
+    }
+
+    &:after {
+        opacity: .5;
+        content: '';
+        display: block;
+        height: 1px;
+        background: $offWhite;
+        position: absolute;
+        bottom: 25px;
+        width: calc(100% - 30px);
+        margin-left: 30px;
+    }
+
     a {
         text-decoration: none;
+
+        &:hover {
+            .work-cta__image img {
+                transform: scale(1.08);
+                transform-origin: center;
+            }
+        }
+
+        .work-cta__image {
+            width: 100%;
+            height: 40vw;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all 2s $easing;
+                transform: scale(1.01);
+                filter: grayscale(1);
+                
+                &:hover {
+                    filter: grayscale(0);
+                }
+            }
+        }
+
+        h2 {
+            line-height: 1.2;
+            max-width: 90%;
+        }
+
     }
-    h2 {
-        font-size: 100%;
-        max-width: 300px;
+
+    .tags {
+        margin-top: 50px;
+
+        a {
+            margin-right: 10px;
+        }
     }
+
 }
 
 .four-oh-four {
@@ -202,15 +300,20 @@ p .button {
 // —————————————————————————————————————————
 
 .work-nav__link,
-.button {
+.button,
+.tags a {
     font-family: 'mono', monospace;
-    font-size: 140%;
-    letter-spacing: 2px;
+    font-size: 180%;
+    letter-spacing: 1px;
     line-height: 1;
-    text-transform: uppercase;
     color: $red !important;
     text-decoration: none;
-    &:hover {}
+    padding: 10px 0 5px 0;
+    transition: all 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+        letter-spacing: 2px;
+    }
 }
 
 
