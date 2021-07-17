@@ -33,44 +33,23 @@ theme: minima
 plugins:
   - jekyll-feed
 sass:
-  sass_dir: _sass #compressed
-  style: expanded
-collections_dir: collections
+  sass_dir: _sass
+  style: compressed
 
 # CloudCannon Options
 _options:
   image: # Front matter field
-    uploads_dir: "uploads/:title"
+    uploads_dir: "/uploads"
   content: # Content Editor and block Editable Regions
-    uploads_dir: "uploads/:title"
+    uploads_dir: "/uploads"
+
+collections:
+  posts:
+    output: true
+    permalink: /work/:title/
 
 #cloudcannon:
-  #data: true
-
-# CloudCannon Field Descriptions
-_comments:
-  name: This can get converted to the file name
-  title: This can get converted to the file name
-
-# Collections (Custom Post Types)
-collections:
-  general_pages:
-    output: true
-    _hide_content: true
-    permalink: /:name
-    # sort_by:   
-
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "general_pages"
-    values:
-      layout: "default"
+  #data: true  
 
 # Exclude from processing.
 # The following items will not be processed, by default.

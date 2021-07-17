@@ -144,7 +144,8 @@ checkbox,
 }
 
 li p,
-p .button {
+p .button,
+p a {
     font-size: 100%;
 }
 
@@ -198,7 +199,8 @@ p .button {
 // ————————————————————————————————————————— 
 // Special Typography
 // —————————————————————————————————————————
-.home-hero {
+.home-hero,
+.post {
     h1 {
         font-size: 600%;
         line-height: 1.2;
@@ -247,7 +249,7 @@ p .button {
 
         &:hover {
             .work-cta__image img {
-                transform: scale(1.08);
+                transform: scale(1.05);
                 transform-origin: center;
             }
         }
@@ -288,13 +290,32 @@ p .button {
 
 }
 
-.four-oh-four {
-    h1 {
-        font-family: 'dearest', serif;
-        font-size: 10vw;
-    }
+h1.special-heading,
+.four-oh-four h1 {
+    font-family: 'dearest', serif;
+    font-size: 10vw;
 }
 
+.post {
+    margin-top: 100px; 
+
+    p, a {
+        font-family: 'mono', monospace;
+        letter-spacing: 0.5px;
+    }
+
+    a {
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    > div > p:first-of-type {
+        &, a {
+            color: $red !important;
+
+        }
+    }
+}
 // ————————————————————————————————————————— 
 // buttons
 // —————————————————————————————————————————

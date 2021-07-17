@@ -1,7 +1,4 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 title: Work
 permalink: /work/
 ---
@@ -11,35 +8,27 @@ permalink: /work/
 <main class="wo">
     <h1 class="sr-only">Work</h1>
     <nav class="work-nav col-1-to-3">
-        <a class="{% if page.url == "/work/" %}active{% endif %} work-nav__link" href="/work/">View all works</a>
-        <a class="{% if page.url == "/work/jamstack/" %}active{% endif %} work-nav__link" href="/work/jamstack/">#jamstack</a>
-        <a class="{% if page.url == "/work/wordpress/" %}active{% endif %} work-nav__link" href="/work/wordpress/">#wordPress</a>
-        <a class="{% if page.url == "/work/design/" %}active{% endif %} work-nav__link" href="/work/design/">#design</a>
+        <a class="active work-nav__link" href="/work/">View all works</a>
+        {% for allCategories in site.categories %}
+        <a class="work-nav__link" href="/work/{{ allCategories[0] | slugify: "latin" }}/">{{ allCategories[0] }}</a>
+        {% endfor %}
     </nav>
+
+    {% for post in site.posts %}
     <section class="work-cta col-4-to-12">
-        <a href="/">
+        <a href="{{ post.url }}">
             <div class="work-cta__image">
-                <img src="/images/work-andrew-boardman.jpg" alt="">
+                <img src="{{ post.featured_image }}" alt="">
             </div>
-            <h2>Andrew Boardman’s personal website development.</h2>
+            <h2>{{ post.page_title }}</h2>
         </a>
         <div class="tags">
-            <a href="/work/jamstack/">#jamstack</a>
-            <a href="/work/forestry/">#forestry</a>
+        {% for postCategory in post.categories %}
+            <a href="/work/{{ postCategory | slugify: "latin" }}/">{{ postCategory }}</a>
+        {% endfor %}
         </div>
     </section>
-    <section class="work-cta col-4-to-12">
-        <a href="/">
-            <div class="work-cta__image">
-                <img src="/images/work-bideawee.jpg" alt="">
-            </div>
-            <h2>Bideawee, a New York animal rescue's website and design.</h2>
-        </a>
-        <div class="tags">
-            <a href="/work/wordpress/">#wordPress</a>
-            <a href="/work/forestry/">#design</a>
-        </div>
-    </section>
+    {% endfor %}
 </main>
 
 {% include footer.html %}

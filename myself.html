@@ -1,0 +1,27 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+title: Myself
+permalink: /myself/
+page_html:
+---
+
+{% include head.html %}
+
+<main>
+    <section class="home-hero wo">
+        <div class="col-4-to-12 s-col-1-to-5">
+            <h1 class="special-heading">Myself</h1>
+        </div>
+
+    </section>
+
+    <article class="post wo">
+        <div class="col-4-to-11">
+            {{ page.page_html }}
+        </div>
+    </article>
+</main>
+
+{% include footer.html %}
