@@ -51,6 +51,7 @@ $fullbrowserheight: calc(100vh - 80px);
 // color
 $offWhite: #fff5f5;
 $red: #E60F0F;
+$black: #130101;
 
 // easings
 $easing: cubic-bezier(0.5, 1, 0.89, 1);
@@ -79,7 +80,7 @@ $easeBack: cubic-bezier(0.34, 1.56, 0.64, 1);
 // core styles & classes
 // ————————————————————————————————————————— 
 body {
-    background-color: #130101 !important;
+    background-color: $black !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
