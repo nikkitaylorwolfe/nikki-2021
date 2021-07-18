@@ -1,0 +1,13 @@
+<section class="work-cta col-4-to-12 s-col-1-to-5">
+    <a href="{{ post.url }}">
+        <div class="work-cta__image">
+            <img src="{{ post.featured_image }}" alt="">
+        </div>
+        <h2>{{ post.page_title }}</h2>
+    </a>
+    <div class="tags">
+    {% for postCategory in post.categories %}
+        <a href="/work/{{ postCategory | slugify: "latin" }}/">{{ postCategory }}</a>
+    {% endfor %}
+    </div>
+</section>

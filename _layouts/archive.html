@@ -1,0 +1,17 @@
+{% include head.html %}
+
+<main class="wo">
+    <h1 class="sr-only">Category: {{ page.category_name }}</h1>
+
+    {% include work-nav.html %}
+
+	{% for post in site.posts %}
+	{% if post.categories contains page.category_name %}
+
+    {% include work-loop.html %}
+
+	{% endif %}
+	{% endfor %}
+</main>
+
+{% include footer.html %}

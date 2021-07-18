@@ -37,21 +37,22 @@
 
 <body>
     <header id="mainHeader" class="main-header wo">
-        <div class="main-header__logo-area col-1-to-4 s-col-1-to-3">
+        <div class="main-header__logo-area col-1-to-4 s-col-1-to-5">
             <a href="/">
                 Nicky
             </a>
         </div>
-        <nav id="mainNav" class="main-header__nav col-4-to-13 s-col-3-to-5">
-            <!-- <a class="{% if page.url == "/work/" %}active{% endif %} main-header__nav__link" href="/work/">Work</a> -->
+        <nav id="mainNav" class="main-header__nav col-4-to-13 s-col-1-to-5">
+            <a class="button {% if page.url == "/work/" %}active{% endif %}" href="/work/">Work</a>
+            <a class="button {% if page.url == "/myself/" %}active{% endif %}" href="/myself/">About myself</a>
             <a class="main-header__nav__icon" href="https://www.linkedin.com/in/nikki-wolfe-472687200/">
                 <img src="/images/linkedin.svg" alt="LinkedIn">
             </a>
+            <a class="main-header__nav__icon" href="https://twitter.com/jdmgh0st">
+                <img src="/images/twitter.svg" alt="Twitter">
+            </a>
             <a class="main-header__nav__icon" href="https://www.awwwards.com/nikkiwolfe/favorites">
                 <img src="/images/awwwards.png" alt="Awwwards Young Jury Profile">
-            </a>
-            <a class="main-header__nav__icon" href="https://open.spotify.com/user/nikki.taylor.?si=258ebc755e514245">
-                <img src="/images/spotify.svg" alt="Spotify">
             </a>
         </nav>
     </header>

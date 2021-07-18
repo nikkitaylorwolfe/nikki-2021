@@ -1,8 +1,3 @@
-/*
-# MOB 2020 Grid System
-# last modified October 19, 2020
-*/
-
 .wo,
 .wo-stacked,
 .wo-full {
@@ -58,48 +53,17 @@ img[class*="col-"] {
     place-self: start;
 }
 
-@media only screen and (min-width: 1200px) {
-    .l-hide {
-        display: none !important;
-    }
-
-    // 1920 
-    @for $a from 1 through ($column-count) {
-        @for $b from 1 through ($column-count + 1) {
-            .col-#{$a}-to-#{$b} {
-                grid-column-start: $a;
-                grid-column-end: $b;
-            }
+// 1920 
+@for $a from 1 through ($column-count) {
+    @for $b from 1 through ($column-count + 1) {
+        .col-#{$a}-to-#{$b} {
+            grid-column-start: $a;
+            grid-column-end: $b;
         }
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1200px) {
-    // medium
-    .wo,
-    .wo-full {
-        display: grid;
-        grid-template-columns: repeat($column-count-m, 1fr);
-        gap: $column-margin + px $column-margin + px;
-        justify-items: stretch;
-        align-items: start;
-    }
-
-    .m-hide {
-        display: none !important;
-    }
-
-    @for $a-m from 1 through ($column-count-m) {
-        @for $b-m from 1 through ($column-count-m + 1) {
-            .m-col-#{$a-m}-to-#{$b-m} {
-                grid-column-start: $a-m;
-                grid-column-end: $b-m;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 870px) {
     // small (mobile)
     .wo,
     .wo-full {

@@ -7,27 +7,13 @@ permalink: /work/
 
 <main class="wo">
     <h1 class="sr-only">Work</h1>
-    <nav class="work-nav col-1-to-3">
-        <a class="active work-nav__link" href="/work/">View all works</a>
-        {% for allCategories in site.categories %}
-        <a class="work-nav__link" href="/work/{{ allCategories[0] | slugify: "latin" }}/">{{ allCategories[0] }}</a>
-        {% endfor %}
-    </nav>
+
+    {% include work-nav.html %}
 
     {% for post in site.posts %}
-    <section class="work-cta col-4-to-12">
-        <a href="{{ post.url }}">
-            <div class="work-cta__image">
-                <img src="{{ post.featured_image }}" alt="">
-            </div>
-            <h2>{{ post.page_title }}</h2>
-        </a>
-        <div class="tags">
-        {% for postCategory in post.categories %}
-            <a href="/work/{{ postCategory | slugify: "latin" }}/">{{ postCategory }}</a>
-        {% endfor %}
-        </div>
-    </section>
+
+    {% include work-loop.html %}
+    
     {% endfor %}
 </main>
 

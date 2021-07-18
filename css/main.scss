@@ -125,6 +125,10 @@ checkbox,
     padding-bottom: 65px;
 }
 
+.main-footer {
+    padding-top: 65px;
+}
+
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
@@ -145,12 +149,21 @@ checkbox,
 
 li p,
 p .button,
-p a {
-    font-size: 100%;
+p a,
+small {
+    font-size: 100% !important;
 }
 
 .wo {
     overflow: visible;
+}
+
+.main-footer p {
+    font-size: 180%;
+}
+
+.post p {
+    opacity: .8;
 }
 
 
@@ -175,10 +188,22 @@ p a {
         }
     }
 
-    .main-header__nav__icon img {
-        height: 44px;
-        padding: 10px 20px 10px 0;
+    .main-header__nav {
+        .button {
+            margin-right: 40px;
+        }
+
+        .main-header__nav__icon img {
+            height: 44px;
+            padding: 10px 20px 10px 0;
+        }
     }
+
+}
+
+.work-nav__link.active,
+.button.active {
+    border-bottom: 1px solid $red;
 }
 
 .work-nav {
@@ -189,10 +214,6 @@ p a {
 
     .work-nav__link {
         margin: 5px 0;
-
-        &.active {
-            border-bottom: 1px solid $red;
-        }
     }
 }
 
@@ -202,7 +223,7 @@ p a {
 .home-hero,
 .post {
     h1 {
-        font-size: 600%;
+        font-size: 700%;
         line-height: 1.2;
     }
 }
@@ -296,12 +317,13 @@ h1.special-heading,
     font-size: 10vw;
 }
 
+.main-footer,
 .post {
     margin-top: 100px; 
 
     p, a {
         font-family: 'mono', monospace;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.2px;
     }
 
     a {
@@ -314,6 +336,11 @@ h1.special-heading,
             color: $red !important;
 
         }
+    }
+
+    h2, h3, h4, h5, h6 {
+        font-size: 600%;
+        margin-bottom: 20px;
     }
 }
 // ————————————————————————————————————————— 
