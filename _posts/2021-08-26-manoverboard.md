@@ -4,6 +4,10 @@ title: Manoverboard
 page_title: The new Manoverboard website development for our brand refresh.
 categories:
   - '#Jamstack'
+  - '#cloudcannon'
+  - '#barba'
+  - '#jekyll'
+  - '#GSAP'
 featured_image: /images/manoverboard-screenshot.png
 ---
 # The new Manoverboard website development for our brand refresh.
