@@ -7,7 +7,11 @@
     </a>
     <div class="tags">
     {% for postCategory in post.categories %}
-        <a href="/work/{{ postCategory | slugify: "latin" }}/">{{ postCategory }}</a>
+    {% assign pageURL = postCategory | slugify: "latin"  %}
+    {% assign fullPageURL = "/work/" | append: pageURL %}
+    {% assign theURL = fullPageURL | append: "/" %}
+
+        <a class="{% if page.url == theURL %}active{% endif %}" href="/work/{{ postCategory | slugify: "latin" }}/">{{ postCategory }}</a>
     {% endfor %}
     </div>
 </section>

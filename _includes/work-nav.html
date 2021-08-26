@@ -1,6 +1,12 @@
 <nav class="work-nav col-1-to-3 s-col-1-to-5">
     <a class="work-nav__link" href="/work/">View all works</a>
     {% for allCategories in site.categories %}
-    <a class="work-nav__link" href="/work/{{ allCategories[0] | slugify: "latin" }}/">{{ allCategories[0] }}</a>
+
+    {% assign pageURL = allCategories[0] | slugify: "latin"  %}
+    {% assign fullPageURL = "/work/" | append: pageURL %}
+    {% assign theURL = fullPageURL | append: "/" %}
+    <a class="work-nav__link {% if page.url == theURL %}active{% endif %}" href="/work/{{ pageURL }}/">
+        {{ allCategories[0]}} 
+    </a>
     {% endfor %}
 </nav>
