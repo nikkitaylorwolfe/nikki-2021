@@ -2,7 +2,7 @@
 layout: post
 title: Adjuvant Capital
 page_title: Adjuvant Capital's website and identity
-date:
+date: 2019-07-01 00:00:00
 categories:
   - '#design'
   - '#wordpress'
