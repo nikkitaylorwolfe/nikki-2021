@@ -6,6 +6,7 @@ categories:
   - '#design'
   - '#wordpress'
   - '#awwwards'
+  - '#typewolf'
 featured_image: /adjuvant-screenshot.jpg
 ---
 # I designed and developed Adjuvant Capital's website and identity.
