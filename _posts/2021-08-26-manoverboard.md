@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Manoverboard
-page_title: The Manoverboard Website
+page_title: The new Manoverboard website development for our brand refresh.
 categories:
   - '#Jamstack'
 featured_image: /images/manoverboard-screenshot.png
