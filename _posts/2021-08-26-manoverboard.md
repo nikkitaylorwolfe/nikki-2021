@@ -4,7 +4,7 @@ title: Manoverboard
 page_title: The new Manoverboard website development for our brand refresh.
 date: 2021-08-26 00:00:00
 categories:
-  - '#Jamstack'
+  - '#jamstack'
   - '#cloudcannon'
   - '#barba'
   - '#jekyll'

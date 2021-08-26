@@ -5,10 +5,8 @@
 
     {% include work-nav.html %}
 
-	{% for post in site.posts %}
-
-    {% include work-loop.html %}
-
+	{% for post in page.posts %}
+        {% include work-loop.html %}
 	{% endfor %}
 </main>
 
