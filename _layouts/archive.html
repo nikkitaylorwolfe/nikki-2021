@@ -6,11 +6,9 @@
     {% include work-nav.html %}
 
 	{% for post in site.posts %}
-	{% if post.categories contains page.category_name %}
 
     {% include work-loop.html %}
 
-	{% endif %}
 	{% endfor %}
 </main>
 

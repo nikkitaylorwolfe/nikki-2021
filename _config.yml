@@ -47,7 +47,8 @@ collections:
     permalink: /work/:title/
 
 jekyll-archives:
-  enabled: categories
+  enabled: 
+    - categories
   layout: archive
   permalinks:
     category: /work/:name/
