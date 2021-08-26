@@ -2,7 +2,7 @@
 layout: post
 title: Manoverboard
 page_title: The new Manoverboard website development for our brand refresh.
-date:
+date: 2021-08-26 00:00:00
 categories:
   - '#Jamstack'
   - '#cloudcannon'
